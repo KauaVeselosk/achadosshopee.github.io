@@ -1,0 +1,100 @@
+/* Importando fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+html, body {
+  height: 100%; /* Garante que a altura da página seja 100% */
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #333; /* Fundo mais cinza, semelhante ao do chat */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Garante que o conteúdo comece no topo */
+}
+
+header {
+  background-color: #0073e6;
+  color: white;
+  padding: 10px 0; /* Diminuindo o padding da barra azul */
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem; /* Diminuindo o tamanho do título */
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 colunas para PC */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px; /* Largura máxima da galeria */
+  margin: 0 auto; /* Centraliza na tela */
+  flex-grow: 1; /* Faz com que a seção de produtos ocupe o espaço disponível */
+}
+
+.produto {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra para profundidade */
+}
+
+.produto h2 {
+  font-size: 1.2rem;
+  font-weight: 500; /* Peso de fonte mais moderno */
+  margin: 10px 0;
+  color: #333; /* Cor de texto mais suave */
+}
+
+.produto a {
+  display: block;
+}
+
+.produto img {
+  width: 100%;
+  max-width: 600px; /* Aumenta o tamanho das imagens para 600px */
+  height: auto; /* Ajusta a altura proporcionalmente */
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.produto img:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem; /* Fonte mais discreta para o rodapé */
+  margin-top: auto; /* Garante que o rodapé seja empurrado para o final */
+}
+
+/* Responsividade para celular (máximo de 600px de largura) */
+@media (max-width: 600px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
+  }
+}
+
+/* Responsividade para tablet (de 601px a 1024px de largura) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .produtos {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no tablet */
+  }
+}
+
+/* Responsividade para PC (acima de 1024px de largura) */
+@media (min-width: 1025px) {
+  .produtos {
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas no PC */
+  }
+}
